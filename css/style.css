@@ -1,27 +1,23 @@
-/*
-GRID assignment 1, LUDVIG OLAUSSON, WUE19
-Fully responsive grid.
-*/
-html, body, .grid-container { height: 100%; margin: 0; } /* Removes the space around the page and makes the height of the page 100% so it covers the screen. */
+html, body, .grid-container { height: 100%; margin: 0;}
 body {
-    background: url("../img/12_col.gif") center top repeat-y; /* Adding the guide grid as a background image with placement specifications*/
+    background: url("https://i.imgur.com/dSNogLp.gif") center top repeat-y;
     background-size: 100%;
 }
-.grid-container * {border: 1px solid black;} /* Adding borders to everything inside grid container*/
+.grid-container * {border: 1px solid black;}
 .grid-container{
     display: grid;
     height: 100%;
     margin: 1%;
     grid-gap: 2%;
-    grid-template-columns: repeat(12, 1fr); /* Prints out 12 columns with 1 fractions of the screen each. */
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: /* Organisation of the differnet elements */
+    grid-template-areas: 
 "header header header header header header header header header header header header" 
 "box1 box1 box2 box2 box2 box2 box2 box2 box2 box2 box3 box3" 
 "content content content content content content content content content sidebar sidebar sidebar" 
 "footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section";
 }
-.header { grid-area: header; } /* Tells the webbrowser that header is part of a grid */
+.header { grid-area: header; }
 .box1 { grid-area: box1; }
 .box2 { grid-area: box2; }
 .box3 { grid-area: box3; }
@@ -32,7 +28,7 @@ body {
     padding: 10px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    grid-row-gap: 10%; /* Gap between the elements inside the grid. can be written grid-gap, for both col and rows */
+    grid-row-gap: 10%;
     grid-column-gap: 2.5%;
     grid-template-areas: "footer-section-1 footer-section-2 footer-section-3 footer-section-4";
     grid-area: footer-section;
@@ -50,15 +46,15 @@ body {
         "footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section";
     }
 }
-@media screen and (min-width: 768px ) and (max-width:960px) { /*Changes the order of the grid objects when the viewport size changes */
+@media screen and (min-width: 768px ) and (max-width:960px) {
     .grid-container{
         grid-template-areas: 
         "header header header header header header header header header header header header" 
-        "box1 box1 box1 box2 box2 box2 box2 box2 box2 box3 box3 box3" 
-        "content content content content content content content content sidebar sidebar sidebar sidebar" 
+        "box1 box1 box1 box1 box2 box2 box2 box2 box3 box3 box3 box3" 
+        "content content content content content content sidebar sidebar sidebar sidebar sidebar sidebar" 
         "footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section footer-section";
     }
-    .footer-section { /* Changes the placement of the differnet elements. controlled by the grid */
+    .footer-section {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr 1fr;
         grid-template-areas: 
@@ -66,7 +62,7 @@ body {
         "footer-section-3 footer-section-4";
       }
 }
-@media screen and (max-width: 768px) { /* Mobile viewport */ 
+@media screen and (max-width: 768px) {
     .grid-container{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(9, minmax(100px, auto)) 100px;
